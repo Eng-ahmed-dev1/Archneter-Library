@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Archnet.Generators/1.0.0": {
+        "dependencies": {
+          "Archnet.Core": "1.0.0"
+        },
+        "runtime": {
+          "Archnet.Generators.dll": {}
+        }
+      },
+      "Archnet.Core/1.0.0": {
+        "runtime": {
+          "Archnet.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Archnet.Generators/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Archnet.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

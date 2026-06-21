@@ -1,0 +1,11 @@
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/bin/Debug/net10.0/Archnet.Core.deps.json
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/bin/Debug/net10.0/Archnet.Core.dll
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/bin/Debug/net10.0/Archnet.Core.pdb
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/Archnet.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/Archnet.Core.AssemblyInfoInputs.cache
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/Archnet.Core.AssemblyInfo.cs
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/Archnet.Core.csproj.CoreCompileInputs.cache
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/Archnet.Core.dll
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/refint/Archnet.Core.dll
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/Archnet.Core.pdb
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/ref/Archnet.Core.dll

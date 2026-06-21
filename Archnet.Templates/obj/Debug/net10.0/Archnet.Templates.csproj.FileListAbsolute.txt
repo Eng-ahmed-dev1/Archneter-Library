@@ -1,0 +1,11 @@
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/bin/Debug/net10.0/Archnet.Templates.deps.json
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/bin/Debug/net10.0/Archnet.Templates.dll
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/bin/Debug/net10.0/Archnet.Templates.pdb
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/obj/Debug/net10.0/Archnet.Templates.GeneratedMSBuildEditorConfig.editorconfig
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/obj/Debug/net10.0/Archnet.Templates.AssemblyInfoInputs.cache
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/obj/Debug/net10.0/Archnet.Templates.AssemblyInfo.cs
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/obj/Debug/net10.0/Archnet.Templates.csproj.CoreCompileInputs.cache
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/obj/Debug/net10.0/Archnet.Templates.dll
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/obj/Debug/net10.0/refint/Archnet.Templates.dll
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/obj/Debug/net10.0/Archnet.Templates.pdb
+/home/amed/Desktop/Repos/Archnet/Archnet.Templates/obj/Debug/net10.0/ref/Archnet.Templates.dll
