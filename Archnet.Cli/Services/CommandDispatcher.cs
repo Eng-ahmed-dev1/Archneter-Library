@@ -4,23 +4,25 @@ namespace Archnet.Cli.Services
 {
     public sealed class CommandDispatcher
     {
-        private readonly IEnumerable<IArchCommand> _commands;
-        public CommandDispatcher(IEnumerable<IArchCommand> commands)
-        => _commands = commands;
+        private readonly IEnumerable<dynamic> _commands;
+
+        public CommandDispatcher(IEnumerable<dynamic> commands)
+        {
+            _commands = commands;
+        }
 
         public async Task DispatchAsync(string command, string[] args)
         {
             var target =
-             _commands.FirstOrDefault(x => string.Equals(x.Name, command, StringComparison.OrdinalIgnoreCase));
+                _commands.FirstOrDefault(x => x.Name == command);
 
             if (target is null)
             {
-                Console.WriteLine(
-               $"Unknown Command: {command}");
-
+                Console.WriteLine($"Unknown Command: {command}");
                 return;
             }
-            await target.ExecuteAsync(args);
+
+            await target.Command.ExecuteAsync(args);
         }
     }
 }
