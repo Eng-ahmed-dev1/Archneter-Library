@@ -26,7 +26,7 @@ var commands =
         .Where(x => x != null)
         .ToList()!;
 
-var dispatcher = new CommandDispatcher(commands);
+var dispatcher = new CommandDispatcher(commands!);
 if (args.Length == 0)
 {
     Console.WriteLine("Usage : archnet <command>");
