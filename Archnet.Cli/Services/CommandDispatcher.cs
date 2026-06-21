@@ -8,11 +8,10 @@ namespace Archnet.Cli.Services
         public CommandDispatcher(IEnumerable<IArchCommand> commands)
         => _commands = commands;
 
-        public async Task DispatchAsync(string command)
+        public async Task DispatchAsync(string command, string[] args)
         {
             var target =
-    _commands.FirstOrDefault(
-        x => string.Equals(x.Name, command, StringComparison.OrdinalIgnoreCase));
+             _commands.FirstOrDefault(x => string.Equals(x.Name, command, StringComparison.OrdinalIgnoreCase));
 
             if (target is null)
             {
@@ -21,7 +20,7 @@ namespace Archnet.Cli.Services
 
                 return;
             }
-            await target.ExecuteAsync();
+            await target.ExecuteAsync(args);
         }
     }
 }
