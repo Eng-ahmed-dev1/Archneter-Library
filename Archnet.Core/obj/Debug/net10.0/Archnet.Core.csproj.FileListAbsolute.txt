@@ -9,3 +9,4 @@
 /home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/refint/Archnet.Core.dll
 /home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/Archnet.Core.pdb
 /home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/ref/Archnet.Core.dll
+/home/amed/Desktop/Repos/Archnet/Archnet.Core/obj/Debug/net10.0/Archnet.Core.sourcelink.json

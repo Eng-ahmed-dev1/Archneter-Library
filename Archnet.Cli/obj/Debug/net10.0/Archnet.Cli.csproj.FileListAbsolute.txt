@@ -18,3 +18,4 @@
 /home/amed/Desktop/Repos/Archnet/Archnet.Cli/obj/Debug/net10.0/Archnet.Cli.pdb
 /home/amed/Desktop/Repos/Archnet/Archnet.Cli/obj/Debug/net10.0/Archnet.Cli.genruntimeconfig.cache
 /home/amed/Desktop/Repos/Archnet/Archnet.Cli/obj/Debug/net10.0/ref/Archnet.Cli.dll
+/home/amed/Desktop/Repos/Archnet/Archnet.Cli/obj/Debug/net10.0/Archnet.Cli.sourcelink.json
