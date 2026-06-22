@@ -1,10 +1,10 @@
 #  Archneter Architecture CLI
 
-![Archneter Logo](Archneter.Cli/icon.png)
+![Archneter Logo](https://raw.githubusercontent.com/Eng-ahmed-dev1/Archneter-Library/main/Archneter.Cli/icon.png)
 
 > **Empower your engineering teams with instant, production-ready .NET architectures.**
 
-![LinkedIn Intro](linkedin_photo.png)
+![LinkedIn Intro](https://raw.githubusercontent.com/Eng-ahmed-dev1/Archneter-Library/main/linkedin_photo.png)
 
 **Archneter** is an enterprise-grade, extensible command-line interface (CLI) engineered to accelerate .NET application development. Built upon Microsoft's best practices and `Microsoft.Extensions.DependencyInjection`, Archneter eliminates manual boilerplate setup by automating the scaffolding of highly cohesive, scalable software architectures. 
 
