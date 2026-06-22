@@ -61,12 +61,21 @@ namespace Archnet.Generators.CleanArchitecture
             {
                 Directory.CreateDirectory(testsPath);
 
-                var domainTestsPath = Path.Combine(testsPath, $"{name}.Domain.Tests");
-                await DotnetCliService.CreateProjectAsync("xunit", $"{name}.Domain.Tests", domainTestsPath);
-                await DotnetCliService.AddToSolutionAsync(slnPath, $"{domainTestsPath}/{name}.Domain.Tests.csproj");
+                // Unit Tests
+                var unitTestsPath = Path.Combine(testsPath, $"{name}.Unit.Tests");
+                await DotnetCliService.CreateProjectAsync("xunit", $"{name}.Unit.Tests", unitTestsPath);
+                await DotnetCliService.AddToSolutionAsync(slnPath, $"{unitTestsPath}/{name}.Unit.Tests.csproj");
                 await DotnetCliService.AddReferenceAsync(
-                    $"{domainTestsPath}/{name}.Domain.Tests.csproj",
+                    $"{unitTestsPath}/{name}.Unit.Tests.csproj",
                     $"{domainPath}/{name}.Domain.csproj");
+
+                // Integration Tests
+                var integrationTestsPath = Path.Combine(testsPath, $"{name}.Integration.Tests");
+                await DotnetCliService.CreateProjectAsync("xunit", $"{name}.Integration.Tests", integrationTestsPath);
+                await DotnetCliService.AddToSolutionAsync(slnPath, $"{integrationTestsPath}/{name}.Integration.Tests.csproj");
+                await DotnetCliService.AddReferenceAsync(
+                    $"{integrationTestsPath}/{name}.Integration.Tests.csproj",
+                    $"{apiPath}/{name}.Api.csproj");
             }
 
             Console.WriteLine($"Clean Architecture solution '{name}' generated successfully.");
