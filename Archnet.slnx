@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="Archnet.Cli/Archnet.Cli.csproj" />
-  <Project Path="Archnet.Core/Archnet.Core.csproj" />
-  <Project Path="Archnet.Generators/Archnet.Generators.csproj" />
+  <Project Path="Archneter.Cli/Archnet.Cli.csproj" />
+  <Project Path="Archneter.Core/Archnet.Core.csproj" />
+  <Project Path="Archneter.Generators/Archnet.Generators.csproj" />
 </Solution>

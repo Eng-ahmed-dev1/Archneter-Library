@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Archnet.Cli</id>
+    <version>1.0.2</version>
+    <authors>Archnet.Cli</authors>
+    <description>Package Description</description>
+    <packageTypes>
+      <packageType name="DotnetTool" />
+    </packageTypes>
+    <repository type="git" commit="cd3f8b5a850f14f0345deb6491b3d48c5b842d34" />
+  </metadata>
+  <files>
+    <file src="/home/amed/Desktop/Repos/Archnet/Archneter.Cli/obj/Release/net10.0/DotnetToolSettings.xml" target="tools/net10.0/any/DotnetToolSettings.xml" />
+    <file src="/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Cli.deps.json" target="tools/net10.0/any/Archnet.Cli.deps.json" />
+    <file src="/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Cli.dll" target="tools/net10.0/any/Archnet.Cli.dll" />
+    <file src="/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Cli.pdb" target="tools/net10.0/any/Archnet.Cli.pdb" />
+    <file src="/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Cli.runtimeconfig.json" target="tools/net10.0/any/Archnet.Cli.runtimeconfig.json" />
+    <file src="/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Core.dll" target="tools/net10.0/any/Archnet.Core.dll" />
+    <file src="/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Core.pdb" target="tools/net10.0/any/Archnet.Core.pdb" />
+    <file src="/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Generators.dll" target="tools/net10.0/any/Archnet.Generators.dll" />
+    <file src="/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Generators.pdb" target="tools/net10.0/any/Archnet.Generators.pdb" />
+  </files>
+</package>

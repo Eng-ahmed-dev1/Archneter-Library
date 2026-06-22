@@ -1,0 +1,9 @@
+/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Cli
+/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Cli.dll
+/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Cli.deps.json
+/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Cli.runtimeconfig.json
+/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Cli.pdb
+/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Core.dll
+/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Generators.dll
+/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Core.pdb
+/home/amed/Desktop/Repos/Archnet/Archneter.Cli/bin/Release/net10.0/publish/Archnet.Generators.pdb
