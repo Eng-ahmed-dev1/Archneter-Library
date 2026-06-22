@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute(@"Archneter is an enterprise-grade command-line interface (CLI) designed to accelerate .NET application development. Built on Microsoft.Extensions.DependencyInjection, it automates the scaffolding of highly cohesive, scalable software architectures—including Clean Architecture, Microservices, Modular Monoliths, Vertical Slices, and N-Tier solutions. Empower your engineering teams to establish standardized, production-ready project foundations instantly.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.0+8cd281593a0b608c0fea957c1151606f6bc1929b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.0+1316f867a05c7b69aa49a569a4df9fce3afce0da")]
 [assembly: System.Reflection.AssemblyProductAttribute("Archneter Architecture CLI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Archneter.Cli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.1.0.0")]
