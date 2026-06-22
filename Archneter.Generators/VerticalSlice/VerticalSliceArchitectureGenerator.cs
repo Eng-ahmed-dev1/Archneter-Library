@@ -4,15 +4,26 @@ using Archneter.Generators.Infrastructure;
 
 namespace Archneter.Generators.VerticalSlice
 {
+    /// <summary>
+    /// Generates a Vertical Slice architecture solution with a single Web API project structured by highly cohesive feature folders.
+    /// </summary>
     public class VerticalSliceArchitectureGenerator : IArchitectureGenerator
     {
         private readonly ICliService _cli;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerticalSliceArchitectureGenerator"/> class.
+        /// </summary>
+        /// <param name="cli">The CLI service used to execute commands.</param>
         public VerticalSliceArchitectureGenerator(ICliService cli)
         {
             _cli = cli;
         }
 
+        /// <summary>
+        /// Asynchronously scaffolds the Vertical Slice API and constructs the necessary internal feature slices.
+        /// </summary>
+        /// <param name="options">The project configuration options containing the requested features.</param>
         public async Task GenerateAsync(ProjectOptions options)
         {
             var name = options.ProjectName;

@@ -4,15 +4,26 @@ using Archneter.Generators.Infrastructure;
 
 namespace Archneter.Generators.NTier
 {
+    /// <summary>
+    /// Generates a traditional N-Tier architecture solution comprising Presentation (PL), Business Logic (BLL), and Data Access (DAL) layers.
+    /// </summary>
     public class NTierArchitectureGenerator : IArchitectureGenerator
     {
         private readonly ICliService _cli;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NTierArchitectureGenerator"/> class.
+        /// </summary>
+        /// <param name="cli">The CLI service used to execute commands.</param>
         public NTierArchitectureGenerator(ICliService cli)
         {
             _cli = cli;
         }
 
+        /// <summary>
+        /// Asynchronously scaffolds the N-Tier architecture layers and constructs internal directories.
+        /// </summary>
+        /// <param name="options">The project configuration options.</param>
         public async Task GenerateAsync(ProjectOptions options)
         {
             var name = options.ProjectName;

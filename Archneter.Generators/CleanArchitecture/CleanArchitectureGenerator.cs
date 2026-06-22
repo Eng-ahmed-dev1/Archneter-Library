@@ -4,15 +4,26 @@ using Archneter.Generators.Infrastructure;
 
 namespace Archneter.Generators.CleanArchitecture
 {
+    /// <summary>
+    /// Generates a complete Clean Architecture solution with Domain, Application, Infrastructure, and Api layers.
+    /// </summary>
     public class CleanArchitectureGenerator : IArchitectureGenerator
     {
         private readonly ICliService _cli;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CleanArchitectureGenerator"/> class.
+        /// </summary>
+        /// <param name="cli">The CLI service used to execute commands.</param>
         public CleanArchitectureGenerator(ICliService cli)
         {
             _cli = cli;
         }
 
+        /// <summary>
+        /// Asynchronously scaffolds the Clean Architecture layers, directories, and cross-project references.
+        /// </summary>
+        /// <param name="options">The project configuration options.</param>
         public async Task GenerateAsync(ProjectOptions options)
         {
             var name = options.ProjectName;
@@ -147,6 +158,9 @@ namespace Archneter.Generators.CleanArchitecture
                 Console.WriteLine($"Clean Architecture solution '{name}' generated successfully.");
         }
 
+        /// <summary>
+        /// Helper method to safely create multiple directories.
+        /// </summary>
         private static void CreateDirectories(params string[] directories)
         {
             foreach (var directory in directories)

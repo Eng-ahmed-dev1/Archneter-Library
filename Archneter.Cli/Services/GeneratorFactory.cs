@@ -6,25 +6,48 @@ using Archneter.Generators.Microservices;
 using Archneter.Generators.NTier;
 using Archneter.Generators.ModularMonolith;
 using Archneter.Generators.VerticalSlice;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Archneter.Cli.Services;
 
-public static class GeneratorFactory
+/// <summary>
+/// A factory responsible for resolving the appropriate architecture generator using Dependency Injection.
+/// </summary>
+public sealed class GeneratorFactory
 {
-    public static IArchitectureGenerator Create(ArchitectureType type, bool isDryRun = false)
+    private readonly IServiceProvider _serviceProvider;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GeneratorFactory"/> class.
+    /// </summary>
+    /// <param name="serviceProvider">The DI service provider.</param>
+    public GeneratorFactory(IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
+    }
+
+    /// <summary>
+    /// Creates and resolves the corresponding generator based on architecture type and execution mode.
+    /// </summary>
+    /// <param name="type">The architectural style to generate.</param>
+    /// <param name="isDryRun">Whether to simulate execution without modifying the disk.</param>
+    /// <returns>An instance of an <see cref="IArchitectureGenerator"/>.</returns>
+    public IArchitectureGenerator Create(ArchitectureType type, bool isDryRun = false)
     {
         ICliService cli = isDryRun
-            ? new DryRunCliService()
-            : new DotnetCliService();
+            ? _serviceProvider.GetRequiredService<DryRunCliService>()
+            : _serviceProvider.GetRequiredService<DotnetCliService>();
 
-        return type switch
+        Type genType = type switch
         {
-            ArchitectureType.CleanArchitecture => new CleanArchitectureGenerator(cli),
-            ArchitectureType.Microservices => new MicroservicesGenerator(cli),
-            ArchitectureType.NTier => new NTierArchitectureGenerator(cli),
-            ArchitectureType.ModularMonolith => new ModularMonolithArchitectureGenerator(cli),
-            ArchitectureType.VerticalSlice => new VerticalSliceArchitectureGenerator(cli),
+            ArchitectureType.CleanArchitecture => typeof(CleanArchitectureGenerator),
+            ArchitectureType.Microservices => typeof(MicroservicesGenerator),
+            ArchitectureType.NTier => typeof(NTierArchitectureGenerator),
+            ArchitectureType.ModularMonolith => typeof(ModularMonolithArchitectureGenerator),
+            ArchitectureType.VerticalSlice => typeof(VerticalSliceArchitectureGenerator),
             _ => throw new NotSupportedException($"Architecture '{type}' is not supported yet.")
         };
+
+        return (IArchitectureGenerator)ActivatorUtilities.CreateInstance(_serviceProvider, genType, cli);
     }
 }

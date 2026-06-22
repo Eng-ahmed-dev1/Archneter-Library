@@ -1,10 +1,19 @@
 namespace Archneter.Generators.Infrastructure
 {
+    /// <summary>
+    /// A mock implementation of <see cref="ICliService"/> that simulates command execution by printing the intended commands to the console.
+    /// Used for the --dry-run CLI flag to preview scaffolding.
+    /// </summary>
     public class DryRunCliService : ICliService
     {
         private static readonly string _separator = new string('─', 60);
         private int _stepIndex = 0;
 
+        /// <summary>
+        /// Simulates executing a raw dotnet command.
+        /// </summary>
+        /// <param name="arguments">The dotnet command arguments.</param>
+        /// <param name="workingDirectory">The working directory context.</param>
         public Task RunAsync(string arguments, string workingDirectory)
         {
             _stepIndex++;
@@ -14,12 +23,18 @@ namespace Archneter.Generators.Infrastructure
             return Task.CompletedTask;
         }
 
+        /// <summary>
+        /// Simulates scaffolding a new dotnet project.
+        /// </summary>
         public Task CreateProjectAsync(string template, string projectName, string outputPath)
         {
             PrintSection($"create project  {projectName}  ({template})");
             return RunAsync($"new {template} -n {projectName} -o \"{outputPath}\"", Directory.GetCurrentDirectory());
         }
 
+        /// <summary>
+        /// Simulates adding a project file to a solution.
+        /// </summary>
         public Task AddToSolutionAsync(string slnPath, string projectPath)
         {
             var projectName = Path.GetFileName(projectPath);
@@ -27,6 +42,9 @@ namespace Archneter.Generators.Infrastructure
             return RunAsync($"sln \"{slnPath}\" add \"{projectPath}\"", Directory.GetCurrentDirectory());
         }
 
+        /// <summary>
+        /// Simulates adding a project reference.
+        /// </summary>
         public Task AddReferenceAsync(string fromProjectPath, string toProjectPath)
         {
             var from = Path.GetFileNameWithoutExtension(fromProjectPath);
@@ -42,6 +60,11 @@ namespace Archneter.Generators.Infrastructure
             Console.ResetColor();
         }
 
+        /// <summary>
+        /// Prints a formatted header for the dry-run output.
+        /// </summary>
+        /// <param name="projectName">The name of the project being scaffolded.</param>
+        /// <param name="architecture">The architecture type being used.</param>
         public void PrintHeader(string projectName, string architecture)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -51,6 +74,9 @@ namespace Archneter.Generators.Infrastructure
             Console.ResetColor();
         }
 
+        /// <summary>
+        /// Prints a formatted footer summarizing the simulated execution steps.
+        /// </summary>
         public void PrintFooter()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;

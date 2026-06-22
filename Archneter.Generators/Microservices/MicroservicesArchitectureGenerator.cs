@@ -4,15 +4,26 @@ using Archneter.Generators.Infrastructure;
 
 namespace Archneter.Generators.Microservices
 {
+    /// <summary>
+    /// Generates a Microservices architecture solution with an API Gateway, Shared Contracts, and independent services.
+    /// </summary>
     public class MicroservicesGenerator : IArchitectureGenerator
     {
         private readonly ICliService _cli;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MicroservicesGenerator"/> class.
+        /// </summary>
+        /// <param name="cli">The CLI service used to execute commands.</param>
         public MicroservicesGenerator(ICliService cli)
         {
             _cli = cli;
         }
 
+        /// <summary>
+        /// Asynchronously scaffolds the entire Microservices ecosystem, creating projects and configuring references.
+        /// </summary>
+        /// <param name="options">The project configuration options containing the requested microservices.</param>
         public async Task GenerateAsync(ProjectOptions options)
         {
             var name = options.ProjectName;

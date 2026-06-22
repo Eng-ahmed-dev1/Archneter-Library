@@ -4,15 +4,26 @@ using Archneter.Generators.Infrastructure;
 
 namespace Archneter.Generators.ModularMonolith
 {
+    /// <summary>
+    /// Generates a Modular Monolith architecture solution with a single Host API, a Shared layer, and independent feature modules.
+    /// </summary>
     public class ModularMonolithArchitectureGenerator : IArchitectureGenerator
     {
         private readonly ICliService _cli;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModularMonolithArchitectureGenerator"/> class.
+        /// </summary>
+        /// <param name="cli">The CLI service used to execute commands.</param>
         public ModularMonolithArchitectureGenerator(ICliService cli)
         {
             _cli = cli;
         }
 
+        /// <summary>
+        /// Asynchronously scaffolds the entire Modular Monolith ecosystem, creating projects and configuring references.
+        /// </summary>
+        /// <param name="options">The project configuration options containing the requested modules.</param>
         public async Task GenerateAsync(ProjectOptions options)
         {
             var name = options.ProjectName;

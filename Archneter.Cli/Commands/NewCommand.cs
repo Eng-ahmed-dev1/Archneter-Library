@@ -6,6 +6,9 @@ using Archneter.Core.Models;
 
 namespace Archneter.Cli.Commands;
 
+/// <summary>
+/// Represents the 'new' command, responsible for collecting user options and scaffolding the requested architecture.
+/// </summary>
 [Command("new")]
 [Description("Scaffold a new architecture solution")]
 [CommandSyntax("new <ProjectName> --arch <type> [--services <S1,S2,...>] [--modules <M1,M2,...>] [--features <F1,F2,...>] [--tests <true|false>] [--dry-run]")]
@@ -37,6 +40,21 @@ namespace Archneter.Cli.Commands;
 [CommandExample("archneter new SliceApp --arch verticalslice --features Orders,Cart --tests true")]
 public sealed class NewCommand : IArchCommand
 {
+    private readonly GeneratorFactory _factory;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="NewCommand"/> class.
+    /// </summary>
+    /// <param name="factory">The factory used to resolve the specific architecture generator.</param>
+    public NewCommand(GeneratorFactory factory)
+    {
+        _factory = factory;
+    }
+
+    /// <summary>
+    /// Asynchronously executes the scaffolding process based on user-provided CLI arguments.
+    /// </summary>
+    /// <param name="context">The context of the executed command.</param>
     public async Task ExecuteAsync(CommandContext context)
     {
         // ── Project name ──────────────────────────────────────────────────────────
@@ -157,7 +175,7 @@ public sealed class NewCommand : IArchCommand
             ServiceNames = serviceNames
         };
 
-        var generator = GeneratorFactory.Create(archType, isDryRun);
+        var generator = _factory.Create(archType, isDryRun);
         await generator.GenerateAsync(options);
     }
 }

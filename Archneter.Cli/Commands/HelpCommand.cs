@@ -4,15 +4,33 @@ using Archneter.Cli.Services;
 
 namespace Archneter.Cli.Commands;
 
+/// <summary>
+/// Represents the 'help' command, responsible for displaying available CLI commands, options, and examples.
+/// </summary>
 [Command("help")]
 [Description("Display available commands")]
 [CommandSyntax("help")]
 public sealed class HelpCommand : IArchCommand
 {
+    private readonly CommandRegistry _registry;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="HelpCommand"/> class.
+    /// </summary>
+    /// <param name="registry">The command registry used to fetch metadata.</param>
+    public HelpCommand(CommandRegistry registry)
+    {
+        _registry = registry;
+    }
+
+    /// <summary>
+    /// Asynchronously executes the help command, printing metadata to the console.
+    /// </summary>
+    /// <param name="context">The context of the executed command.</param>
     public Task ExecuteAsync(CommandContext context)
     {
         var writer = new CliConsoleWriter();
-        var metadataList = CommandRegistry.Instance.GetCommandsMetadata().ToList();
+        var metadataList = _registry.GetCommandsMetadata().ToList();
 
         writer.WriteLine();
         writer.WriteLine("Archneter CLI");

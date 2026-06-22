@@ -1,6 +1,14 @@
-# Archneter
+# 🚀 Archneter Architecture CLI
 
-Archneter is a lightweight, extensible command-line tool (CLI) designed to automate the scaffolding and creation of various software architecture templates in .NET. It streamlines project setup by generating clean folder structures, creating projects, linking them within a solution, and configuring references automatically using the .NET CLI.
+![Archneter Logo](Archneter.Cli/icon.png)
+
+> **Empower your engineering teams with instant, production-ready .NET architectures.**
+
+![LinkedIn Intro](linkedin_photo.png)
+
+**Archneter** is an enterprise-grade, extensible command-line interface (CLI) engineered to accelerate .NET application development. Built upon Microsoft's best practices and `Microsoft.Extensions.DependencyInjection`, Archneter eliminates manual boilerplate setup by automating the scaffolding of highly cohesive, scalable software architectures. 
+
+Whether you are building a lightweight API or a complex distributed system, Archneter configures your project folders, layers, solutions, and cross-project references in seconds—guaranteeing a standardized foundation every time.
 
 ---
 
@@ -80,8 +88,34 @@ To build the solution, run:
 dotnet build
 ```
 
-### Run the CLI
-You can execute the CLI project directly using `dotnet run`:
+### Install the Tool (Global)
+Archneter is packaged as a .NET Global Tool. You can install it globally on your machine by running:
+```bash
+dotnet tool install -g Archneter
+```
+
+### Troubleshooting: `archneter: command not found`
+The .NET SDK usually adds the global tools directory to your system's `PATH` automatically. However, if your terminal doesn't recognize the `archneter` command after installation, you must manually add the `.dotnet/tools` directory to your `PATH`:
+
+#### Windows
+1. Open Command Prompt and run:
+   ```cmd
+   setx PATH "%PATH%;%USERPROFILE%\.dotnet\tools"
+   ```
+2. Restart your Command Prompt or PowerShell.
+
+#### Linux & macOS
+1. Open your terminal and append the export command to your shell profile (e.g., `~/.bashrc`, `~/.zshrc`, or `~/.profile`):
+   ```bash
+   echo 'export PATH="$PATH:$HOME/.dotnet/tools"' >> ~/.bashrc
+   ```
+2. Apply the changes immediately:
+   ```bash
+   source ~/.bashrc  # (or source ~/.zshrc)
+   ```
+
+### Run from Source (Development)
+If you are developing or testing locally without installing:
 ```bash
 dotnet run --project Archneter.Cli/Archneter.Cli.csproj -- [command] [options]
 ```
@@ -93,7 +127,7 @@ dotnet run --project Archneter.Cli/Archneter.Cli.csproj -- [command] [options]
 ### Display Help
 To see all commands and configurations, run the `help` command:
 ```bash
-dotnet run --project Archneter.Cli/Archneter.Cli.csproj -- help
+archneter help
 ```
 
 ### Create a New Project
@@ -102,7 +136,6 @@ Use the `new` command to generate a template solution.
 ```bash
 archneter new <ProjectName> --arch <type> [options]
 ```
-*(Assuming you alias the CLI to `archneter`, otherwise use `dotnet run --project Archneter.Cli/Archneter.Cli.csproj -- new ...`)*
 
 #### Options:
 *   `--arch <type>`: Specifies the architecture template. Supported values:
