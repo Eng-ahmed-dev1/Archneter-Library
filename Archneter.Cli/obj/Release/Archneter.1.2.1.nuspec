@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Archneter</id>
+    <version>1.2.1</version>
+    <authors>Ahmed</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <description>Archneter is an enterprise-grade command-line interface (CLI) designed to accelerate .NET application development. Built on Microsoft.Extensions.DependencyInjection, it automates the scaffolding of highly cohesive, scalable software architectures—including Clean Architecture, Microservices, Modular Monoliths, Vertical Slices, and N-Tier solutions. Empower your engineering teams to establish standardized, production-ready project foundations instantly.</description>
+    <tags>dotnet cli architecture scaffolding clean-architecture microservices modular-monolith vertical-slice n-tier enterprise productivity</tags>
+    <packageTypes>
+      <packageType name="DotnetTool" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/Eng-ahmed-dev1/Archneter-Library" commit="ff7ac8c1153071f1749d27f056caea2c8b8c494c" />
+  </metadata>
+  <files>
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/obj/Release/net8.0/DotnetToolSettings.xml" target="tools/net8.0/any/DotnetToolSettings.xml" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Archneter.Cli.deps.json" target="tools/net8.0/any/Archneter.Cli.deps.json" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Archneter.Cli.dll" target="tools/net8.0/any/Archneter.Cli.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Archneter.Cli.pdb" target="tools/net8.0/any/Archneter.Cli.pdb" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Archneter.Cli.runtimeconfig.json" target="tools/net8.0/any/Archneter.Cli.runtimeconfig.json" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Archneter.Core.dll" target="tools/net8.0/any/Archneter.Core.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Archneter.Core.pdb" target="tools/net8.0/any/Archneter.Core.pdb" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Archneter.Generators.dll" target="tools/net8.0/any/Archneter.Generators.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Archneter.Generators.pdb" target="tools/net8.0/any/Archneter.Generators.pdb" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Microsoft.CodeAnalysis.CSharp.dll" target="tools/net8.0/any/Microsoft.CodeAnalysis.CSharp.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Microsoft.CodeAnalysis.dll" target="tools/net8.0/any/Microsoft.CodeAnalysis.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Microsoft.Extensions.DependencyInjection.Abstractions.dll" target="tools/net8.0/any/Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/Microsoft.Extensions.DependencyInjection.dll" target="tools/net8.0/any/Microsoft.Extensions.DependencyInjection.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/System.CommandLine.dll" target="tools/net8.0/any/System.CommandLine.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/cs/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/cs/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/cs/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/cs/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/cs/System.CommandLine.resources.dll" target="tools/net8.0/any/cs/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/de/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/de/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/de/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/de/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/de/System.CommandLine.resources.dll" target="tools/net8.0/any/de/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/es/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/es/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/es/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/es/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/es/System.CommandLine.resources.dll" target="tools/net8.0/any/es/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/fr/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/fr/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/fr/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/fr/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/fr/System.CommandLine.resources.dll" target="tools/net8.0/any/fr/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/it/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/it/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/it/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/it/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/it/System.CommandLine.resources.dll" target="tools/net8.0/any/it/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/ja/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/ja/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/ja/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/ja/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/ja/System.CommandLine.resources.dll" target="tools/net8.0/any/ja/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/ko/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/ko/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/ko/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/ko/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/ko/System.CommandLine.resources.dll" target="tools/net8.0/any/ko/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/pl/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/pl/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/pl/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/pl/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/pl/System.CommandLine.resources.dll" target="tools/net8.0/any/pl/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/pt-BR/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/pt-BR/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/pt-BR/System.CommandLine.resources.dll" target="tools/net8.0/any/pt-BR/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/ru/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/ru/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/ru/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/ru/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/ru/System.CommandLine.resources.dll" target="tools/net8.0/any/ru/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/tr/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/tr/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/tr/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/tr/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/tr/System.CommandLine.resources.dll" target="tools/net8.0/any/tr/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/zh-Hans/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/zh-Hans/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/zh-Hans/System.CommandLine.resources.dll" target="tools/net8.0/any/zh-Hans/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll" target="tools/net8.0/any/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/zh-Hant/Microsoft.CodeAnalysis.resources.dll" target="tools/net8.0/any/zh-Hant/Microsoft.CodeAnalysis.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/bin/Release/net8.0/publish/zh-Hant/System.CommandLine.resources.dll" target="tools/net8.0/any/zh-Hant/System.CommandLine.resources.dll" />
+    <file src="/home/amed/Desktop/Repos/Archneter/README.md" target="/README.md" />
+    <file src="/home/amed/Desktop/Repos/Archneter/Archneter.Cli/icon.png" target="/icon.png" />
+    <file src="/home/amed/Desktop/Repos/Archneter/linkedin_photo.png" target="/linkedin_photo.png" />
+  </files>
+</package>

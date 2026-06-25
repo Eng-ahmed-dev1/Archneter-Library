@@ -202,11 +202,19 @@ public class ProjectAnalyzer
 
     private static string InferProjectName(string directory)
     {
-        // Try to read the .csproj name first
+        // 1. Try to read from solution file first (to match the real solution name)
+        var slnx = Directory.GetFiles(directory, "*.slnx", SearchOption.TopDirectoryOnly).FirstOrDefault();
+        if (slnx is not null) return Path.GetFileNameWithoutExtension(slnx);
+        
+        var sln = Directory.GetFiles(directory, "*.sln", SearchOption.TopDirectoryOnly).FirstOrDefault();
+        if (sln is not null) return Path.GetFileNameWithoutExtension(sln);
+
+        // 2. Try to read the .csproj name
         var csproj = Directory.GetFiles(directory, "*.csproj", SearchOption.TopDirectoryOnly).FirstOrDefault();
         if (csproj is not null)
             return Path.GetFileNameWithoutExtension(csproj);
 
+        // 3. Fallback to the directory name
         return new DirectoryInfo(directory).Name;
     }
 

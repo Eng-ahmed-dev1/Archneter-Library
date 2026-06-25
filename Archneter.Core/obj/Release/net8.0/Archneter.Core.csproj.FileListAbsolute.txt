@@ -1,0 +1,12 @@
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/bin/Release/net8.0/Archneter.Core.deps.json
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/bin/Release/net8.0/Archneter.Core.dll
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/bin/Release/net8.0/Archneter.Core.pdb
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/obj/Release/net8.0/Archneter.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/obj/Release/net8.0/Archneter.Core.AssemblyInfoInputs.cache
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/obj/Release/net8.0/Archneter.Core.AssemblyInfo.cs
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/obj/Release/net8.0/Archneter.Core.csproj.CoreCompileInputs.cache
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/obj/Release/net8.0/Archneter.Core.sourcelink.json
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/obj/Release/net8.0/Archneter.Core.dll
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/obj/Release/net8.0/refint/Archneter.Core.dll
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/obj/Release/net8.0/Archneter.Core.pdb
+/home/amed/Desktop/Repos/Archneter/Archneter.Core/obj/Release/net8.0/ref/Archneter.Core.dll

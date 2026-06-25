@@ -5,7 +5,7 @@
   },
   "projects": {
     "/home/amed/Desktop/Repos/Archneter/Archneter.Cli/Archneter.Cli.csproj": {
-      "version": "1.2.0",
+      "version": "1.2.1",
       "restore": {
         "projectUniqueName": "/home/amed/Desktop/Repos/Archneter/Archneter.Cli/Archneter.Cli.csproj",
         "projectName": "Archneter",

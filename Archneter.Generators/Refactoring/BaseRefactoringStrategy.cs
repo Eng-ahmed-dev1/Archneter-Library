@@ -71,7 +71,22 @@ public abstract class BaseRefactoringStrategy : IRefactoringStrategy
 
         Directory.CreateDirectory(Path.GetDirectoryName(destinationPath)!);
 
-        File.Copy(sourcePath, destinationPath, overwrite: true);
+        int retries = 3;
+        while (true)
+        {
+            try
+            {
+                if (File.Exists(destinationPath)) File.Delete(destinationPath);
+                File.Copy(sourcePath, destinationPath, overwrite: true);
+                break;
+            }
+            catch (IOException) when (retries > 0)
+            {
+                retries--;
+                System.Threading.Thread.Sleep(500); // Wait for background file locks to release
+            }
+        }
+        
         File.Delete(sourcePath);
 
         WriteSuccess($"  ✔  {Path.GetFileName(sourcePath)} → {Shorten(destinationPath)}");

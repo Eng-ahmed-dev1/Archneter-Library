@@ -74,7 +74,7 @@ public class ToMicroservicesStrategy : BaseRefactoringStrategy
             var domainProj = Path.Combine(root, $"{name}.Services.{service}.Domain", "..", $"{name}.Services.{service}.Domain", $"{name}.Services.{service}.Domain.csproj");
             var appProj = Path.Combine(root, $"{name}.Services.{service}.Application", "..", $"{name}.Services.{service}.Application", $"{name}.Services.{service}.Application.csproj");
             var infraProj = Path.Combine(root, $"{name}.Services.{service}.Infrastructure", "..", $"{name}.Services.{service}.Infrastructure", $"{name}.Services.{service}.Infrastructure.csproj");
-            var sharedProj = Path.Combine(root, $"{name}.Services.{service}.Domain", "..", "..", $"{name}.Shared", $"{name}.Shared.csproj");
+            var sharedProj = Path.Combine(root, $"{name}.Services.{service}.Domain", "..", $"{name}.Shared", $"{name}.Shared.csproj");
 
             await Cli.AddReferenceAsync(Path.Combine(root, $"{name}.Services.{service}.Application", $"{name}.Services.{service}.Application.csproj"), domainProj);
             await Cli.AddReferencesAsync(Path.Combine(root, $"{name}.Services.{service}.Infrastructure", $"{name}.Services.{service}.Infrastructure.csproj"), new[] { domainProj, appProj });
@@ -122,28 +122,69 @@ public class ToMicroservicesStrategy : BaseRefactoringStrategy
 
     private static HashSet<string> InferServices(List<ClassifiedFile> files)
     {
-        var suffixes = new[]
-        {
-            "Controller", "Service", "Repository", "Handler",
-            "Command", "Query", "Entity", "Model", "DbContext"
-        };
-
         var services = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        // 1. Try to infer from "Features/{Module}", "Modules/{Module}", or "UseCases/{Module}"
+        foreach (var file in files)
+        {
+            var parts = file.SourcePath.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+            var featuresIdx = Array.FindIndex(parts, p => p.Equals("Features", StringComparison.OrdinalIgnoreCase) || 
+                                                          p.Equals("Modules", StringComparison.OrdinalIgnoreCase) ||
+                                                          p.Equals("UseCases", StringComparison.OrdinalIgnoreCase));
+            if (featuresIdx >= 0 && featuresIdx + 1 < parts.Length)
+            {
+                var serviceName = parts[featuresIdx + 1];
+                if (!string.IsNullOrWhiteSpace(serviceName) && !serviceName.EndsWith(".cs"))
+                {
+                    services.Add(serviceName);
+                }
+            }
+        }
+
+        if (services.Any()) return services;
+
+        // 2. Fallback to name-based parsing with CQRS prefix/suffix stripping
+        var suffixes = new[] { "Controller", "Service", "Repository", "Handler", "Command", "Query", "Entity", "Model", "Validator", "DbContext" };
+        var prefixes = new[] { "Create", "Update", "Delete", "Remove", "Add", "GetAll", "Get" };
 
         foreach (var file in files)
         {
-            var baseName = Path.GetFileNameWithoutExtension(file.FileName);
-            foreach (var suffix in suffixes)
+            var domain = Path.GetFileNameWithoutExtension(file.FileName);
+            
+            // Recursively strip suffixes
+            bool stripped;
+            do
             {
-                if (baseName.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+                stripped = false;
+                foreach (var suffix in suffixes)
                 {
-                    var domain = baseName[..^suffix.Length].Trim();
-                    if (!string.IsNullOrWhiteSpace(domain))
+                    if (domain.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
                     {
-                        services.Add(domain);
-                        break;
+                        domain = domain[..^suffix.Length].Trim();
+                        stripped = true;
                     }
                 }
+            } while (stripped && domain.Length > 0);
+
+            // Strip prefixes
+            foreach (var prefix in prefixes)
+            {
+                if (domain.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                {
+                    domain = domain[prefix.Length..].Trim();
+                    if (domain.StartsWith("By", StringComparison.OrdinalIgnoreCase)) domain = domain[2..].Trim();
+                }
+            }
+
+            // Also ignore interfaces starting with I
+            if (domain.StartsWith("I") && domain.Length > 2 && char.IsUpper(domain[1]))
+            {
+                domain = domain[1..];
+            }
+
+            if (!string.IsNullOrWhiteSpace(domain) && domain.Length > 2)
+            {
+                services.Add(domain);
             }
         }
 

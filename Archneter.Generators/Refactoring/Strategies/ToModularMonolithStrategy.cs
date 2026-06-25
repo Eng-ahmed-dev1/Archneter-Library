@@ -132,28 +132,69 @@ public class ToModularMonolithStrategy : BaseRefactoringStrategy
 
     private static HashSet<string> InferModules(List<ClassifiedFile> files)
     {
-        var suffixes = new[]
-        {
-            "Controller", "Service", "Repository",
-            "Handler", "Command", "Query", "Entity", "Model"
-        };
-
         var modules = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        // 1. Try to infer from "Features/{Module}", "Modules/{Module}", or "UseCases/{Module}"
+        foreach (var file in files)
+        {
+            var parts = file.SourcePath.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+            var featuresIdx = Array.FindIndex(parts, p => p.Equals("Features", StringComparison.OrdinalIgnoreCase) || 
+                                                          p.Equals("Modules", StringComparison.OrdinalIgnoreCase) ||
+                                                          p.Equals("UseCases", StringComparison.OrdinalIgnoreCase));
+            if (featuresIdx >= 0 && featuresIdx + 1 < parts.Length)
+            {
+                var moduleName = parts[featuresIdx + 1];
+                if (!string.IsNullOrWhiteSpace(moduleName) && !moduleName.EndsWith(".cs"))
+                {
+                    modules.Add(moduleName);
+                }
+            }
+        }
+
+        if (modules.Any()) return modules;
+
+        // 2. Fallback to name-based parsing with CQRS prefix/suffix stripping
+        var suffixes = new[] { "Controller", "Service", "Repository", "Handler", "Command", "Query", "Entity", "Model", "Validator", "DbContext" };
+        var prefixes = new[] { "Create", "Update", "Delete", "Remove", "Add", "GetAll", "Get" };
 
         foreach (var file in files)
         {
-            var baseName = Path.GetFileNameWithoutExtension(file.FileName);
-            foreach (var suffix in suffixes)
+            var domain = Path.GetFileNameWithoutExtension(file.FileName);
+            
+            // Recursively strip suffixes (e.g. CommandHandler -> Command -> Entity)
+            bool stripped;
+            do
             {
-                if (baseName.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+                stripped = false;
+                foreach (var suffix in suffixes)
                 {
-                    var domain = baseName[..^suffix.Length].Trim();
-                    if (!string.IsNullOrWhiteSpace(domain))
+                    if (domain.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
                     {
-                        modules.Add(domain);
-                        break;
+                        domain = domain[..^suffix.Length].Trim();
+                        stripped = true;
                     }
                 }
+            } while (stripped && domain.Length > 0);
+
+            // Strip prefixes
+            foreach (var prefix in prefixes)
+            {
+                if (domain.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                {
+                    domain = domain[prefix.Length..].Trim();
+                    if (domain.StartsWith("By", StringComparison.OrdinalIgnoreCase)) domain = domain[2..].Trim();
+                }
+            }
+
+            // Also ignore interfaces starting with I
+            if (domain.StartsWith("I") && domain.Length > 2 && char.IsUpper(domain[1]))
+            {
+                domain = domain[1..];
+            }
+
+            if (!string.IsNullOrWhiteSpace(domain) && domain.Length > 2)
+            {
+                modules.Add(domain);
             }
         }
 
