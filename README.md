@@ -217,3 +217,11 @@ archneter refactor --to <architecture> [--dir <path>] [options]
     ```
 
 > **Note on NuGet Package Propagation:** During refactoring, Archneter analyzes your source `.csproj` files. If you move a file that depends on external packages (like `Dapper` or `Newtonsoft.Json`), Archneter ensures that those `<PackageReference>` tags are seamlessly copied to the new `.csproj` destination, guaranteeing that your projects compile with all required dependencies!
+
+---
+
+## What's New in v1.2.1
+This patch release brings critical stability improvements for the `refactor` command when processing complex, real-world repositories (like CQRS architectures):
+- **Intelligent Module/Service Inference:** Enhanced the heuristics in `Microservices` and `Modular Monolith` refactoring to correctly parse feature-based directories (e.g. `UseCases/`, `Features/`) and recursively strip CQRS verbs/suffixes. This prevents the tool from generating excessive projects for each individual command/query.
+- **Resilient File Operations:** Implemented a robust retry mechanism to handle transient `.NET` background locks (e.g., MSBuild/OmniSharp locking files during scaffold) that previously caused `IOException` crashes.
+- **Solution File Discovery:** Improved project name inference to prioritize existing `.sln` and `.slnx` files, preventing `dotnet sln add` failures when the root directory name differs from the actual solution name.
